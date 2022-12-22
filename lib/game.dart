@@ -8,18 +8,19 @@ enum GuessResult {
 }
 
 class Game {
-  final int answer = Random().nextInt(100) + 1;
+  final int answer;
   int _totalGuesses = 0;
+  static List<int> _listsumGuesses =[];
 
   // constructor
-  Game() {
-    print('Answer is $answer');
-  }
+  Game(int maxRandom) : answer = Random().nextInt(maxRandom) + 1;
+
 
   GuessResult doGuess(int guess) {
     _totalGuesses++;
 
     if (guess == answer) {
+      _listsumGuesses.add(totalGuesses);
       return GuessResult.correct;
     } else if (guess > answer) {
       return GuessResult.tooHigh;
@@ -32,4 +33,9 @@ class Game {
   int get totalGuesses {
     return _totalGuesses;
   }
+
+  List get getSumGuesses {
+    return _listsumGuesses;
+  }
+
 }
