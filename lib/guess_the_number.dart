@@ -9,7 +9,7 @@ void main() {
   late GuessResult guessResult;
 
   print('╔══════════════════════════════════════════════════');
-  print('║              GUESS THE NUMBER                    ');
+  print('║              GUESS THE NUMBER 2/2565             ');
   print('║──────────────────────────────────────────────────');
 
   do {
@@ -43,8 +43,7 @@ void main() {
       print('║  ➜ $guess is TOO LOW! ▼');
       print('║──────────────────────────────────────────────────');
     }
-  } while (guessResult != GuessResult.correct){
-    var agian = stdin.readLineSync();
-    
-  }
+  } while (guessResult != GuessResult.correct);
+
+
 }
